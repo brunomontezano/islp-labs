@@ -29,6 +29,9 @@ y = np.array ([4, 9, 7])
 # expect in R
 x + y
 
+# Now let's multiply the vectors
+x * y
+
 # Matrices in Python are usually represented as two-dimensional arrays and
 # vectors as one-dimensional arrays
 x = np.array([[1, 2], [3, 4]])
