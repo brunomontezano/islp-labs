@@ -1,23 +1,3 @@
-# Print some text with print()
-print("Fit a model with", 11, "variables.")
-
-# Addind two integers
-3 + 5
-
-# Concatenating strings
-"Hello" + " " + "world"
-
-# Create a list
-x = [3, 4, 5]
-x
-
-# Create another list
-y = [4, 9, 7]
-
-# It's interesting that adding two lists do not behave like in R
-# The second list is appended to the first one!
-x + y
-
 # Import numpy to work with some numerical Python
 import numpy as np
 
@@ -132,9 +112,9 @@ print(np.random.normal(scale=5, size =2))
 
 # We can set a seed, it's not a problem!
 rng = np.random.default_rng (1303)
-print(rng.normal(scale=5, size =2))
+print(rng.normal(scale=5, size=2))
 rng2 = np.random.default_rng (1303)
-print(rng2.normal(scale=5, size =2))
+print(rng2.normal(scale=5, size=2))
 
 # np.mean(), np.var(), np.std() can be used to calculated mean, variance and
 # standard deviations
@@ -146,3 +126,13 @@ np.var(y), y.var(), np.mean((y - y.mean())**2)
 
 # np.var() divides by the sample size n rather than n - 1 by default
 # See argument ddof in np.var()
+np.sqrt(np.var(y)), np.std(y)
+
+# We can apply these summaries to rows and columns of a matrix
+
+# Let's create a 10 x 3 matrix of N(0,1) random variables
+X = rng.standard_normal((10, 3))
+X
+
+# We use axis=0 to refer to its rows. We want to do row sums
+X.mean(axis=0)
